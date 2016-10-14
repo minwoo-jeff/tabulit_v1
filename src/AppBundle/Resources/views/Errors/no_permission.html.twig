@@ -1,0 +1,12 @@
+{% extends 'AppBundle:Errors:under_construction.html.twig' %}
+
+{% block notice %}
+    <h1>ERROR</h1>
+    {% for flash_message in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    <h3>You do not have permission to access this page.</h3>
+    
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'AppBundle:Viewing_Page:viewpage.html.twig' %}
+
+{% block heading %}
+<h1>Singles</h1>
+<h4>Our Singles are short stories, great brief reads that you can unlock with your tokens. New Singles come out every week, so keep your eyes open!</h4>
+{% endblock %}
+
+{% block add_javascripts %}
+	<script>
+    $('#serial_container').find($('.single')).show();
+    $('#serial_container').find($('.novel')).hide();
+    </script>
+{% endblock %}

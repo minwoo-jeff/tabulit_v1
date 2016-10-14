@@ -1,0 +1,36 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    Logs <small>Recent 30</small>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li class="active">
+        All Logs
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                {#<div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Tasks Panel</h3>
+                </div>#}
+                <div class="panel-body">
+                    <div class="list-group">
+                        {% for log in logs %}
+                            <div class="list-group-item">
+                                <span class="badge">{{ log.created|time_ago_in_words }}</span>
+                                <i class="fa fa-fw fa-calendar"></i> {{log.note}}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

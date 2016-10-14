@@ -1,0 +1,239 @@
+_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+_post_login:
+    path:     /post_login
+    defaults: {_controller: AppBundle:Default:postLogin}
+
+_profile:
+    path:     /profile
+    defaults: {_controller: AppBundle:Default:profile}
+
+_terms:
+    path:     /terms
+    defaults: {_controller: AppBundle:Default:terms}
+    
+_privacy:
+    path:     /privacy
+    defaults: {_controller: AppBundle:Default:privacy}
+    
+#################################
+##         Registration        ##
+#################################
+_registration:
+    path:     /registration
+    defaults: { _controller: AppBundle:Default:registration }
+    
+_registration_apply:
+    path:     /registration/apply
+    defaults: { _controller: AppBundle:Default:registrationPost }
+
+_registration_email:
+    path:     /registration/email/{id}/{hash}/{hashTime}
+    defaults: { _controller: AppBundle:Default:confirmEmail }
+    
+    
+#################################
+##         ERORRS              ##
+#################################
+
+_no_permission:
+    path:     /restricted
+    defaults: {_controller: AppBundle:Default:noPermission}
+    
+_under_construction:
+    path:     /construction
+    defaults: {_controller: AppBundle:Default:underConstruction}
+    
+_please_login:
+    path:     /request/login
+    defaults: {_controller: AppBundle:Default:pleaseLogin}
+    
+_account_disabled:
+    path:     /disabled
+    defaults: {_controller: AppBundle:Default:accountDisabled}
+
+_verify_email:
+    path:     /verify/email
+    defaults: {_controller: AppBundle:Default:verifyEmail}
+    
+#################################
+##         Login/Logout        ##
+#################################
+
+_login:
+    path:     /login
+    defaults: { _controller: AppBundle:Login:index }
+
+_login_check:
+    path:     /login_check
+    defaults: { _controller: AppBundle:Login:logincheck }
+    
+_login_resetpassword:
+    path:     /passwordreset
+    defaults: { _controller: AppBundle:Login:resetPassword }
+    
+_login_resetpassword_post:
+    path:     /passwordreset/post
+    defaults: { _controller: AppBundle:Login:resetPasswordPost }
+    
+_login_resetpassword_complete:
+    path:     /passwordreset/complete/{id}/{hash}/{hashTime}
+    defaults: { _controller: AppBundle:Login:resetPasswordComplete }
+    
+_login_resetpassword_complete_post:
+    path:     /passwordreset/completepost
+    defaults: { _controller: AppBundle:Login:resetPasswordCompletePost }
+    
+_logout:
+    path:     /logout
+    
+#################################
+##         Viewing Page        ##
+#################################
+
+_viewing_page:
+    path:     /serials
+    defaults: {_controller: AppBundle:Serial:index}
+    
+_singles_cat:
+    path:     /serials/singles
+    defaults: {_controller: AppBundle:Serial:singlesCat}
+
+_serials_cat:
+    path:     /serials/serials
+    defaults: {_controller: AppBundle:Serial:serialsCat}
+
+#################################
+##         Pricing Page        ##
+#################################
+
+_pricing_page:
+    path:     /prices
+    defaults: {_controller: AppBundle:Pricing:index}
+
+_prepare_payment:
+    path:     /prices/prepare/payment/{user_id}/{amount}
+    defaults: {_controller: AppBundle:Payment:prepare}
+
+_prepare_done:
+    path:     /prices/prepare/done
+    defaults: {_controller: AppBundle:Payment:done}
+    
+#################################
+##         Volumes Page        ##
+#################################
+
+_volumes_page:
+    path:     /serial/{serial_id}
+    defaults: {_controller: AppBundle:Volume:index}
+    
+_read_volume:
+    path:     /serial/{serial_id}/volume/{volume_id}
+    defaults: {_controller: AppBundle:Volume:read}
+    
+_purchase_volume:
+    path:     /purchase/serial/{serial_id}/volume/{volume_id}
+    defaults: {_controller: AppBundle:Volume:purchase}
+    
+#########################################
+##         Admin Pages                 ##
+#########################################
+
+_admin_homepage:
+    path:     /admin
+    defaults: {_controller: AppBundle:Admin/Admin:index}
+
+#################################
+##         Admin Logs          ##
+#################################
+_all_logs:
+    path:     /admin/logs
+    defaults: {_controller: AppBundle:Admin/Admin:allLogs}
+    
+#################################
+##         Admin Serials       ##
+#################################
+
+_all_serials:
+    path:     /admin/serials
+    defaults: {_controller: AppBundle:Admin/AdminSerials:allSerials}
+
+_create_serial:
+    path:     /admin/create/serial
+    defaults: {_controller: AppBundle:Admin/AdminSerials:createSerial}
+    
+_create_serial_post:
+    path:     /admin/create/serial/post
+    defaults: {_controller: AppBundle:Admin/AdminSerials:createSerialPost}
+    
+_edit_serial:
+    path:     /admin/edit/serial/{serial_id}
+    defaults: {_controller: AppBundle:Admin/AdminSerials:editSerial}
+
+_edit_serial_post:
+    path:     /admin/edit/serial/{serial_id}/post
+    defaults: {_controller: AppBundle:Admin/AdminSerials:editSerialPost}
+
+_delete_serial:
+    path:     /admin/delete/serial/{serial_id}
+    defaults: {_controller: AppBundle:Admin/AdminSerials:deleteSerial}
+#################################
+##         Admin Volumes       ##
+#################################
+_all_volumes:
+    path:    /admin/serial/{serial_id}/volumes
+    defaults: {_controller: AppBundle:Admin/AdminVolume:allVolumes}
+
+_create_volume:
+    path:    /admin/create/volume
+    defaults: {_controller: AppBundle:Admin/AdminVolume:createVolume}
+
+_create_volume_post:
+    path:    /admin/create/volume/post
+    defaults: {_controller: AppBundle:Admin/AdminVolume:createVolumePost}
+    
+_read_volume:
+    path:    /admin/read/serial/{serial_id}/volume/{volume_id}
+    defaults: {_controller: AppBundle:Admin/AdminVolume:readVolume}
+
+_edit_volume:
+    path:    /admin/edit/serial/{serial_id}/volume/{volume_id}
+    defaults: {_controller: AppBundle:Admin/AdminVolume:editVolume}
+
+_edit_volume_post:
+    path:    /admin/edit/serial/{serial_id}/volume/{volume_id}/post
+    defaults: {_controller: AppBundle:Admin/AdminVolume:editVolumePost}
+    
+_delete_volume:
+    path:     /admin/delete/volume/{serial_id}/{volume_id}
+    defaults: {_controller: AppBundle:Admin/AdminVolume:deleteVolume}
+#################################
+##         Admin Users         ##
+#################################
+
+_all_users:
+    path:    /admin/users
+    defaults: {_controller: AppBundle:Admin/AdminUsers:allUsers}
+
+_edit_user:
+    path:    /admin/edit/user/{user_id}
+    defaults: {_controller: AppBundle:Admin/AdminUsers:editUser}
+
+_edit_user_post:
+    path:    /admin/edit/user/{user_id}/post
+    defaults: {_controller: AppBundle:Admin/AdminUsers:editUserPost}
+    
+#################################
+##         Admin Mail          ##
+#################################
+
+_new_mail: 
+    path:     /admin/mail
+    defaults: {_controller: AppBundle:Admin/AdminMail:newMail}
+    
+_admin_mail_send:
+    path:     /admin/mail/send
+    defaults: {_controller: AppBundle:Admin/AdminMail:sendMail}
+

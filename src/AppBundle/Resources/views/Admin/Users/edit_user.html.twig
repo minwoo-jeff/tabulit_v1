@@ -1,0 +1,50 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    Edit User: 
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li>
+        <a href='{{path('_all_users')}}'>All Users</a>
+    </li>
+    <li class="active">
+        Edit User
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {{form_start(form)}}
+        <table class="table table-condensed">
+            <tbody>
+                <tr>
+                    <td>{{form_widget(form.email, {'read_only':true})}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_widget(form.roles)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_widget(form.firstName)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_widget(form.lastName)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_widget(form.gender)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_widget(form.locked)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_widget(form.birthDate)}}</td>
+                </tr>
+            </tbody>
+        </table>
+        {{form_widget(form.apply, {'attr': {'class': 'btn btn-default'}})}}
+        {{form_end(form)}}         
+    </div>
+{% endblock %}

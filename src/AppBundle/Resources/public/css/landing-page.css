@@ -1,0 +1,555 @@
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family:'bariol_regularregular', sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    color: #a8a8a8;
+    padding-top: 20px;
+    
+}
+
+h2, h3 {
+    color: #58585B;
+    font-family:'bariol_regularregular', sans-serif;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+
+
+/* Navigation */
+.navbar {
+    border: none;
+    -webkit-box-shadow: 0 4px 2px -2px rgba(51, 40, 51, .1);
+    -moz-box-shadow: 0 4px 2px -2px rgba(51, 40, 51, .1);
+    box-shadow: 0 4px 2px -2px rgba(51, 40, 51, .1);
+    background-color: #fff;
+}
+
+.navbar .navbar-brand {
+    padding: 0;
+}
+
+.navbar .navbar-header .navbar-brand img{
+    width: inherit;
+    height: inherit;
+}
+
+.navbar .collapse .nav{
+    float: right;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #424040;
+}
+
+.learnbtn {
+    margin-top: 20px;
+}
+
+.btn-toolbar:before, .btn-toolbar:after, .clearfix:before, .clearfix:after, .container-fluid:before, .container:before, .container:after, .nav:before, .nav:after, .navbar-header:before, .navbar-header:after, .navbar:before, .navbar:after,
+.modal-footer:before, .modal-footer:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after , .panel-body:before, .panel-body:after , .row:before, .row:after {
+    display: none;
+    clear: none;
+    content: initial;
+}
+.navbar-log {
+    float: right;
+    list-style: none;
+}
+@media(min-width:767px) {
+    .navbar {
+        padding: 5px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+/* Carousel Header */
+.carousel-indicators li{
+    border: none;
+    background-color: rgb(249, 225, 225);
+    width: 15px;
+    height: 15px;
+    margin-bottom: 5%;
+}
+.carousel-indicators .active {
+    background-color: rgb(240, 175, 175);
+    width: 15px;
+    height: 15px;
+    margin-bottom: 5%;
+}
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+
+}
+.carousel-inner .item:first-child > .fill{
+    background-image:url('../img/backcover.jpg');
+}
+.carousel-inner .item:nth-child(2) > .fill{
+    background-image:url('../img/helmetproposalwithBG.png');
+}
+.carousel-inner .item:last-child > .fill{
+    background-image:url('../img/tilottomabannerjee.png');
+}
+
+#carousel2 .carousel-inner .item:first-child > .fill {
+    background-image: url('../img/viewing_page.jpg.png');
+}
+#carousel2 .carousel-inner .item:nth-child(2) > .fill {
+    background-image:url('../img/chapters-page.jpg');
+}
+#carousel2 .carousel-inner .item:last-child > .fill {
+    background-image:url('../img/reading_page.jpg.png');
+}
+.fill {
+    width: 100%;
+    height: inherit;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.header-content {
+    height: 100%;
+    padding: 20% 10%;
+    text-align: center;
+
+}
+
+.header-content-box h1  {
+    font-size: 145px;
+    font-family: 'Grand Hotel', cursive;
+    color: rgba(225, 102, 96, 1);
+    border-bottom: solid 1px rgba(214, 216, 216, 1);
+    padding: 0;
+}
+.header-content-box h2 {
+    color: rgba(130, 130, 130, 1);
+}
+
+.header-content-box2 h1 {
+    font-size: 120px;
+    font-family: 'bariol_regularregular', sans-serif;
+        color: #fff;
+    opacity: 0.9;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    border-bottom: solid 1px rgba(214, 216, 216, 1);
+    padding: 0;
+    font-weight: bold;
+}
+.header-content-box3 h1 {
+    font-size: 80px;
+    font-family:'bariol_regularregular', sans-serif;
+    color: #fff;
+    opacity: 0.9;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    border-bottom: solid 1px rgba(214, 216, 216, 1);
+    padding: 0;
+    font-weight: bold;
+}
+.header-content-box2 h3, .header-content-box3 h3 {
+    font-size: 45px;
+    font-family: 'bariol_regularregular', sans-serif;
+    color: #fff;
+}
+.header-content a {
+    font-size: 18px;
+}
+
+.btn, .btn:link, .btn:visited {
+    background-color: #F05454;
+    border: 1px solid #F05454;
+    border-radius: 30px;
+
+}
+.btn:hover, .btn:active{
+    background-color: #fff;
+    border: 1px solid #F05454;
+    color: #F05454;
+}
+
+#item1, #item1:link, #item1:visited {
+    color: #58585B;
+    vertical-align: sub;
+    margin-right: 20px;
+}
+#item1:hover, #item1:active {
+    color: #000;
+    text-decoration: none;
+}
+
+#item2, #item2:link, #item2:visited {
+    color: #fff;
+    padding: 5px 15px;
+    margin-top: 10px;
+    border: 1px solid #F05454;
+    border-radius: 30px;
+}
+#item2:hover, #item2:active {
+    background-color: #fff;
+    border: 1px solid #F05454;
+    color: #F05454;
+}
+
+
+li:nth-child(2), li:nth-child(3) {
+    padding-left: 10px;
+} 
+
+/* About Page */
+.about-section {
+    height: 30%;
+    padding-top: 30px;
+    text-align: center;
+    background-color: rgb(225, 242, 241);
+    z-index: 1000;
+    position: relative;
+
+}
+
+.slanted {
+  overflow: hidden;
+  margin-top: -100px;
+  height: 25%;
+  width: 100%;
+  transform: skewY(-6deg);
+  background-color: rgb(225, 242, 241);
+  z-index: -1;
+  position: absolute;
+}
+
+/* Begin Page */
+
+.begin-section {
+    margin-top: 50px;
+    padding-top: 100px;
+    text-align: center;
+    height: inherit;
+}
+
+.begin-section h1 {
+    padding-bottom: 50px;
+}
+
+.begin-section h3 {
+    padding: 20px 0;
+}
+
+.begin-section p {
+    padding-top: 20px 0;
+    margin: 0 auto;
+}
+
+/* Tour Page*/
+.tour-section ul{
+    text-align:left;
+}
+
+.tour-section {
+    height: 30%;
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgb(253, 243, 219);
+    position: relative;
+    z-index: 1000;
+}
+
+.slanted2 {
+      overflow: hidden;
+      margin-top: -100px;
+      height: 25%;
+      width: 100%;
+      transform: skewY(6deg);
+      background-color: rgb(253, 243, 219);
+      z-index: -1;
+      position: absolute;
+}
+
+/* Preview Page */ 
+
+.preview-section {
+    margin-top: 50px;
+    padding-top: 100px;
+    height: 90%;
+}
+
+.tour-bullets {
+    margin-left: 5%;
+    padding-right: 0;
+    list-style-type: none; 
+    margin-top: 60px;
+    display: inline-block;   
+}
+
+.tour-bullets a {
+    counter-increment: step-counter;
+    padding: 20px 0;
+
+}
+
+.tour-bullets a::before {
+    content: counter(step-counter);
+    margin-right: 10px;
+    font-size: 80%;
+    background-color: rgb(225, 102, 96);
+    color: white;
+    font-weight: bold;
+    padding: 13px 18px;
+    border-radius: 100%;
+}
+
+#previewimg {
+    width: 580px;
+    height: 350px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10px;
+-webkit-box-shadow: -1px 1px 5px 5px rgba(130,130,130,0.5);
+ -moz-box-shadow: -1px 1px 5px 5px rgba(130,130,130,0.5);
+ box-shadow: -1px 1px 5px 5px rgba(130,130,130,0.5);
+}
+
+.tour-bullets > a > .active {
+    font-weight: bolder;
+}
+
+.tour-bullets a {
+    font-size: 24px;
+    color: #7e7e7e;
+}
+
+
+/* Contact Page */
+.contact-section {
+    height: 90%;
+    text-align: center;
+    z-index: 1000;
+
+}
+.contact-section .container {
+    height: 150px; 
+    width: 100%; 
+    background: rgba(231, 231, 231, 0.43);
+}
+
+/* Contact Page - Writers Section */
+.contact-section .writers-comment{
+    margin: 100px 0;
+
+}
+.contact-section .writers-comment #thumbnail-container {   
+    margin: 15px auto;
+    position: inherit;
+    z-index: 10;
+}
+.contact-section .writers-comment #writers-thumbnail {
+    border-radius: 50px;
+}
+.contact-section .writers-comment p {
+    text-align: left;
+    padding: 10px;
+    color: #000;
+    font-size: larger;
+}
+.contact-section .writers-comment #thumbnail-container .writers-body{
+    display: table-cell;
+    vertical-align: top;
+}
+
+/* Contact Page - Start Now Section */
+.start-now {
+    height: 300px;
+    padding-top: 30px;
+    text-align: center;
+    background-size: 100% auto;
+    background-repeat: none;
+
+}
+.start-now .container {
+    color: #fff;
+
+}
+
+.start-now h1{
+    color: #777;
+    z-index: 10;
+    position: inherit;
+    margin: 20px;
+}
+.start-now .btn {
+    z-index: 10;
+    position: inherit;
+    padding: 10px 20px;
+    font-size: medium;
+}
+
+.slanted3{
+      overflow: hidden;
+      margin-top: -130px;
+      height: 40%;
+      width: 100%;
+      transform: skewY(10deg);
+      background-color: #fff;
+      position: absolute;
+}
+
+
+.input-group {
+    position: absolute;
+    right: 20%;
+    margin-top: 10px;
+    border-right: solid 1px #d3d3d3;
+    color: #000;
+}
+
+#srch-term {
+    width: inherit;
+    border: none;
+    box-shadow: none;
+}
+
+.input-group-btn > .btn {
+    background-color: #fff;
+    border: none;
+}
+
+.start-now {
+     background-image: url('../img/slant-lastpage.jpg');
+}
+
+@media(max-width:1200px) { 
+    .adventure-thumbnail {
+        padding: 0;
+     width: 120px;
+        height: 120px;
+    }
+
+    .begin-section > .container {
+        padding: 5px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .begin-section p {
+        word-wrap: break-word;
+        width: 180px;
+    }
+}
+
+@media(max-width:1200px){
+    .preview-section .container {
+    text-align: left;
+    margin-top: -100px;
+    }
+    #previewimg {
+    width: 580px;
+    height: 350px;
+    margin-top: 40px;
+    padding: 5px;
+}
+
+}
+
+@media (max-width: 768px) {
+    .begin-section p {
+        word-wrap: break-word;
+        width: 100%;
+    }
+    .col-xs-8 {
+        margin-top: -20px;
+    }
+    .col-xs-8 p {
+        margin-top: -10px;
+    }
+    .beginread {
+        padding-bottom: -10px;
+    }
+
+    #begin-images {
+        margin-top: 0px;
+    }
+    .about-section {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    .begin-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        height: initial;
+    }
+}
+@media (max-width: 767px) {
+    .input-group {
+    position: fixed;
+}
+}
+@media(max-width:570px){
+        #previewimg {
+    width: 330px;
+    height: 250px;
+    }
+    .tour-bullets{
+        font-size: xx-small;
+            }
+
+.contact-section {
+    height: 100%;
+    padding-top: 30px;
+
+}
+    .start-now {
+    height: 30%;
+    padding-top: 0;
+
+}
+.start-now .container {
+    margin-top: 23%;
+    font-size: smaller;
+}
+.slanted3{
+      overflow: hidden;
+      margin-top: -130px;
+      height: 40%;
+      width: 100%;
+      transform: skewY(10deg);
+      background-color: #fff;
+      position: absolute;
+}
+}
+.fa-7x {
+    font-size: 7em;
+    margin: 5px;
+}
+.fa-circle {
+    color: #F05454;
+}

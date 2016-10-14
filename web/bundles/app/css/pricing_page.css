@@ -1,0 +1,108 @@
+
+.price-heading{
+    text-align: center;
+
+}
+.price-heading h1{
+    
+    color: rgba(242, 97, 97, 1);
+    margin: 35px 0;
+    font-size: 40px;
+}
+.price-heading h4{
+    margin-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+.price-btn, .price-btn:link, .price-btn:visited{
+    color: #F05454;
+    border: 1px solid #F05454;
+    border-radius: 30px;
+    padding: 6px 18px;
+    text-decoration: none;
+}
+.price-btn:hover, .price-btn:active{
+    background-color: #F05454;
+    color: #fff;
+    text-decoration: none;
+}
+.price-continue {
+    text-align: center;
+}
+.price-continue h3 {
+    margin-top: 100px;
+}
+
+/* Price Tags */
+.price {
+    height: auto;
+    width :950px;
+}
+.price-tags {
+    text-align: center;
+    margin: 60px;
+}
+.price-tags .tag {
+    width:200px; 
+    height:auto;
+    float:left;
+}
+.price-tags a{
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 4px 13px;
+    background-color: #fff;
+    opacity: 0.8;
+    position: absolute;
+    margin-top: -85px;
+    margin-left: -45px;
+}
+.price-tags #blue-tag a, .price-tags #blue-tag a:link, .price-tags #blue-tag a:visited{
+    color: #538FBD;
+    font-weight: bold;
+    font-size: 15px;
+}
+.price-tags #blue-tag a:hover, .price-tags #blue-tag a:active {
+    background-color: #538FBD;
+    text-decoration: none;
+    color: #fff;
+}
+
+.price-tags #red-tag a, .price-tags #red-tag a:link, .price-tags #red-tag a:visited{
+    color: #F37677;
+    font-weight: bold;
+    font-size: 15px;
+}
+.price-tags #red-tag a:hover, .price-tags #red-tag a:active {
+    background-color: #CA5253;
+    text-decoration: none;
+    color: #fff;
+}
+
+.price-tags #yellow-tag a, .price-tags #yellow-tag a:link, .price-tags #yellow-tag a:visited{
+    color: #FCC86F;
+    font-weight: bold;
+    font-size: 15px;
+}
+.price-tags #yellow-tag a:hover, .price-tags #yellow-tag a:active {
+    background-color: #EFAA1B;
+    text-decoration: none;
+    color: #fff;
+}
+.price-tags #green-tag a, .price-tags #green-tag a:link, .price-tags #green-tag a:visited{
+    color: #84CDA5;
+    font-weight: bold;
+    font-size: 15px;
+}
+.price-tags #green-tag a:hover, .price-tags #green-tag a:active {
+    background-color: #4EB57C;
+    text-decoration: none;
+    color: #fff;
+}
+
+@media(max-width: 1100px) {
+    .price {
+        width: auto;
+    }
+}

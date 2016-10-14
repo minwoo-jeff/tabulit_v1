@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Tabulit</title>
+
+        {% block stylesheets %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{{asset('bundles/app/css/bootstrap.min.css')}}" rel="stylesheet">
+
+            <!-- Custom CSS -->
+            <link href="{{asset('bundles/app/css/viewing_page.css')}}" rel="stylesheet">
+
+            <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+            <!-- Bariol Regular CSS -->
+            <link href="{{asset('bundles/app/fonts/stylesheet.css')}}" rel="stylesheet">
+            <link rel="icon" type="image/png" href="{{asset('bundles/app/img/redcut_favicon.png')}}">
+        {% endblock %}
+
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+    <style>
+        body {
+            height: auto;
+        }
+        main {
+            margin-left: auto; 
+            margin-top: 130px; 
+            margin-bottom: 30px;
+            font-size: 20px;"
+        }
+
+        .btn-toolbar:before, .btn-toolbar:after, .clearfix:before, .clearfix:after, .container-fluid:before, .container:before, .container:after, .nav:before, .nav:after, .navbar-header:before, .navbar-header:after, .navbar:before, .navbar:after,.modal-footer:before, .modal-footer:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after , .panel-body:before, .panel-body:after , .row:before, .row:after {
+            display: none;
+            clear: none;
+            content: initial;
+        }
+        .reading-content{
+            word-break: keep-all;
+            line-height: 1.5;
+            display: block; 
+            margin: 0 20px;
+            white-space: pre-line;
+            font-family: 'EB Garamond', serif;
+            padding: 0 20%;
+        }
+
+            @media(max-width: 900px) {
+                .reading-content{
+                    padding: 0;
+                }
+            }
+
+            #browse, #browse:link, #browser:active {
+            margin-right: 30px;
+            background: #fff;
+            border: 1px solid #BBBDC0;
+            color: #58585B;
+            border-radius: 15px;
+            margin-top: 15px;
+            }
+
+            /*.chapters-col {
+            -webkit-column-count: 2; 
+            -moz-column-count: 2; 
+            column-count: 2; 
+
+            }
+            @media (max-width:800px) {
+            .chapters-col {
+            -webkit-column-count: 1; 
+            -moz-column-count: 1; 
+            column-count: 1;
+            margin: 0 10px;         
+            }*/
+            @media (max-width:768px) {
+            .reading-content {
+            margin-top: 60px;
+            }
+            }
+
+        </style>
+        <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" oncontextmenu="return false" oncopy="return false" oncut="return false" onpaste="return false">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+                <div class="navbar-logo navbar-header page-scroll">
+                    <a class="navbar-brand page-scroll" href="{{path('_viewing_page')}}"><div class="logo" style="width:inherit; height:inherit;"><img src= "{{ asset('bundles/app/img/redcut1.png') }}" >Tabulit</div></a>
+                </div>
+
+                <div class="nav navbar-nav pull-right">
+                    <ul>
+                        <li>
+
+                            <button type="button" class="btn btn-primary btn-md" id="browse" onClick="history.go(-1);
+                         return true;">BACK TO BROWSE</button>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <div class="navbar-right navbar-collapse page-scroll">
+                        <ul class="profile-group navbar-header">
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+            <!-- /.navbar-collapse -->
+            <main>
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+                        <div class="chapters-col">
+                            <div class="reading-content" id="data">
+                                {{volume.content}}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {# <div id="flipbook">
+                    <div class="hard"> Turn.js </div>
+                    <div class="hard"></div>
+                    <div>  </div>
+                
+                    <div class="hard"></div>
+                    <div class="hard"></div>
+                </div> #}
+            </main>
+
+            {% block javascripts %}
+                <!-- jQuery -->
+                <script src="{{asset('bundles/app/js/jquery.js')}}"></script>
+
+                <!-- Bootstrap Core JavaScript -->
+                <script src="{{asset('bundles/app/js/bootstrap.min.js')}}"></script>
+                <!-- Book Flip turn.js Plugin -->
+                <script src="{{asset('bundles/app/js/turn.js')}}"></script>
+                <script>
+                                 // $("#flipbook").turn({
+                                 //     width: 1000, height: 600, autoCenter: true
+                                 // });
+
+
+                                 $(window).load(function () {
+                                     var content = $('#data1 > div');
+                                     var size = content.height();
+                                     //var contentHeight = ($(window).height())-30;
+                                     var totalheight = $(window).height();
+                                     var half = content.select(size >= totalheight);
+                                     if (size >= totalheight) {
+                                         half.appendTo("#data2 > div");
+                                     }
+                                     // $(".reading-content > p").each(function (index) {
+                                     //     if (index >= half) {
+                                     //         $(this).appendTo("#data2");
+                                     //     }
+                                     // });
+                                     console.log(totalheight);
+                                     console.log(half);
+                                     console.log($(window).height());
+                                 });
+
+                </script>
+            {% endblock %}
+
+
+        </body>
+
+    </html>

@@ -1,0 +1,32 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    Users <small>All</small>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li class="active">
+        All Users
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed">
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{user.id}}
+                            <td>{{user.fullName}}</td>
+                            <td class="pull-right"><a href="{{path('_edit_user', {'user_id':user.id})}}"><button class="btn btn-sm btn-primary">Edit User {{user.id}}</button></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    Create Volume
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li>
+        <a href='{{path('_all_serials')}}'>All Serials</a>
+    </li>
+    <li class="active">
+        Edit Volume {{volume.id}}
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {{form_start(form)}}
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>{{form_label(form.title)}}</td>
+                    <td>{{form_widget(form.title , {'attr': {'placeholder':'TITLE'}})}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.serial)}}</td>
+                    <td>{{form_widget(form.serial, {'read_only':'true'})}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.content)}}</td>
+                    <td>{{form_widget(form.content, {'attr': {'placeholder':'ENTER CONTENT'}})}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.price)}}</td>
+                    <td>{{form_widget(form.price, {'attr': {'placeholder':'ENTER PRICE'}})}}</td>
+                </tr>
+            </tbody>
+        </table>
+                {{form_widget(form.apply, {'attr': {'class': 'btn btn-default'}})}}
+        {{form_end(form)}}         
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    Volumes <small>{{serial.title}}</small>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li>
+        <a href="{{path('_all_serials')}}">All Serials</a>
+    </li>
+    <li class="active">
+        Volumes
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed">
+                <tbody>
+                    {% if volumes is not null %}
+                        {% for volume in volumes %}
+                            <tr>
+                                <td><a href="{{path('_read_volume', {'serial_id':serial.id, 'volume_id':volume.id})}}">{{volume.title}}</a></td>
+                                <td>{{volume.price}}</td>
+                                <td class="pull-right">
+                                    <a href="{{path('_edit_volume', {'serial_id':serial.id, 'volume_id':volume.id})}}">
+                                        <button class="btn btn-sm btn-primary">Edit Volume {{volume.id}}</button>
+                                    </a>
+                                    <a href="{{path('_delete_volume', {'volume_id': volume.id, 'serial_id':serial.id})}}">
+                                        <button class="btn btn-sm btn-danger">Delete Volume</button>
+                                    </a>
+                                </td>
+                                
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

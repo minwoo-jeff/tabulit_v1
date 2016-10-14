@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Tabulit</title>
+
+        {% block stylesheets %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{{asset('/bundles/app/css/bootstrap.min.css')}}" rel="stylesheet">
+
+            <!-- Custom CSS -->
+            <link href="{{asset('/bundles/app/css/viewing_page.css')}}" rel="stylesheet">
+            <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+            <!-- Bariol Regular CSS -->
+            <link href="{{asset('/bundles/app/fonts/stylesheet.css')}}" rel="stylesheet">
+            <link rel="icon" type="image/png" href="{{asset('bundles/app/img/redcut_favicon.png')}}">
+            
+        {% endblock %}
+
+
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+            body {
+                background-color: #F9FAF9;
+            }
+            h1 {
+                font-weight: bold;
+            }
+            .notice {
+                text-align: center;
+                position: absolute;
+                top: 25%;
+                left: 10%;
+                width: 80%;
+            }
+
+            .logo {
+                position: absolute;
+                top: 15%;
+                text-align: center;
+                padding-right: 20px;
+                font-size: 70px;
+            }
+            .logo > img {
+                width: 30;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="logo" style="width:inherit; height:inherit;"><img src="{{asset('/bundles/app/img/redcut1.png')}}" >Tabulit</div>
+        <div class="notice"> 
+            {% block notice %}
+            <h1>Under Construction</h1><br>
+            <h3>We are currently working hard at bringing this portion of Tabulit up and running. <br><br> Thank you for your patience!</h3> 
+            {% endblock %}
+        </div>
+
+        {% block javascripts %}
+            <!-- jQuery -->
+            <script src="{{asset('/bundles/app/js/jquery.js')}}"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{{asset('/bundles/app/js/bootstrap.min.js')}}"></script>
+        {% endblock %}
+
+    </body>
+
+</html>

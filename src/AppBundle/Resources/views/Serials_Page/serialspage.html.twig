@@ -1,0 +1,14 @@
+{% extends 'AppBundle:Viewing_Page:viewpage.html.twig' %}
+
+{% block heading %}
+<h1>Novels</h1>
+<h4>Our Novels are updated on a weekly basis. Try the first three, and if you like it, unlock some more with your tokens!</h4>
+{% endblock %}
+
+{% block add_javascripts %}
+	<script>
+	$('#serial_container').find($('.novel')).show();
+    $('#serial_container').find($('.single')).hide();
+    
+    </script>
+{% endblock %}

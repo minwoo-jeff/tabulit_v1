@@ -1,0 +1,13 @@
+{% extends 'AppBundle:Errors:under_construction.html.twig' %}
+
+{% block notice %}
+    <h1>Thank You For Registering!</h1>
+    {% for flash_message in app.session.flashbag.get('notice') %}
+        <div class="flash-notice" style="font-size:20px;">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    <h3>Please check your email and verify your account for full access to Tabulit!</h3>
+    
+    <h3>Click <a href="{{path('_post_login')}}">here</a> to be redirected!</h3>
+{% endblock %}

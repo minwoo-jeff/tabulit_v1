@@ -1,0 +1,46 @@
+/* Main */
+.profile-space {
+    overflow: hidden;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    margin-top: 50px;
+    border: solid 3px rgba(242, 97, 97, 1);
+    object-fit: cover;
+
+}
+
+.price-heading{
+    text-align: center;
+
+}
+.price-heading h1{
+    
+    color: rgba(242, 97, 97, 1);
+    margin: 35px 0;
+    font-size: 40px;
+}
+.price-heading h4{
+    margin-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+.profile-btn, .profile-btn:link, .profile-btn:visited{
+    color: #F05454;
+    border: 1px solid #F05454;
+    border-radius: 30px;
+    padding: 6px 18px;
+    text-decoration: none;
+
+}
+.profile-btn:hover, .profile-btn:active{
+    background-color: #F05454;
+    color: #fff;
+    text-decoration: none;
+}
+

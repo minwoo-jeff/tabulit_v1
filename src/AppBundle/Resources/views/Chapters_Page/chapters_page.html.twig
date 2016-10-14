@@ -1,0 +1,74 @@
+{% extends 'AppBundle:Viewing_Page:viewpage.html.twig' %}
+
+{% block main %}
+    <main>
+        <div class="row">
+            <div class="col-lg-12" id="chapters_cover">
+                {% if serial.filepath is not null %}
+                    <img src="{{asset('bundles/app/uploads/' ~ serial.filepath) }}" class="img-responsive" alt="">
+                {% else %}
+                    <img src="http://placehold.it/700x250" style="width: 100%; height: auto; margin-top: 60px;">  
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-heading" stye="margin-bottom: 0;">
+                    <h1>{{serial.title}}</h1>
+                    <hr>
+                    {% set writer = serial.writtenBy %}
+                    {#<h4>Written by: &nbsp;<div class="chapters-author" style="display: inline; font-weight:bold;">{{writer.fullName}}</div>&nbsp;・&nbsp;<div class="chapters-num" style="display: inline;">7</div>&nbsp;chapters, &nbsp;<div class="chapters-words" style="display: inline;">5980</div>&nbsp;words</h4>#}
+                    <h4>Written by: &nbsp;<div class="chapters-author" style="display: inline; font-weight:bold;">{% if writer is not null %}{{writer.fullName}}{% endif %}</div>
+                </div>
+            </div>
+            {% for volume in volumes %}
+                <div class="col-lg-12">
+                    <hr>
+                    <div class="chapters-date">{{volume.uploadedDate}}</div>
+                    <div class="chapters-block">
+                        <div class="chapters-head">
+
+                            <a href="{{path('_read_volume', {'serial_id':serial.id, 'volume_id':volume.id})}}">
+                                {{loop.index}} 
+                                <div class="chapters-title">
+                                    {{volume.title}}
+                                </div>
+                            </a>
+                            <div class="pull-right">
+                                {% if volume.price == 0 or volume in user.purchasedVolumes %}
+
+                                {% else %}
+                                    <button id="purchase" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal-{{volume.id}}">Purchase For {{volume.price}}!</button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div id="modal-{{volume.id}}" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Purchase {{volume.title}}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Would you like to purchase this volume for {{volume.price}} coin(s)?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="{{path('_purchase_volume', {'volume_id':volume.id, 'serial_id':serial.id})}}"><button type="button" class="btn btn-default">Y E S</button></a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">N O</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    {{volume.title}} <small>{{serial.title}}</small>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li>
+        <a href="{{path('_all_serials')}}">Serials</a>
+    </li>
+    <li>
+        <a href="{{path('_all_volumes', {'serial_id':serial.id})}}">{{serial.title}}</a>
+    </li>
+    <li class="active">
+        {{volume.title}}
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {{volume.content}}
+    </div>
+{% endblock %}

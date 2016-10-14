@@ -1,0 +1,68 @@
+body {
+    background: url('../img/backcover.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#login_fail {
+    color: red;
+    font-size: 15px;
+}
+.form-control::-webkit-input-placeholder, .form-control:-ms-input-placeholder, .form-control:-moz-placeholder, .form-control::-moz-placeholder{
+    font-family:'bariol_regularregular', Arial, sans-serif;
+}
+.form-signin{
+    border: 1px solid #E7E8EA;
+    border-radius: 10px;
+    background-color: #fff;
+    min-width: 500px;
+}
+.form-container{
+    padding: 30px;
+}
+.form-signin .logo{
+    text-align: center;
+    color: rgb(236, 80, 80);
+    opacity: 0.9;
+}
+.form-signin .logo p{
+    color: #000;
+}
+.form-signin input{
+    margin-top: 30px;
+} 
+.checkbox #agree{
+    padding: 10px;
+}
+.form-signin #login, .form-signin #login:link, .form-signin #login:visited, #u_apply, #u_apply:link, #u_apply:visited{
+    background-color: #F05454;
+    opacity: 0.9;
+    border: 1px solid #F05454; 
+    border-radius: 10px;
+    padding: 7px;
+    text-decoration: none;
+}
+
+.form-signin #register_btn, .form-signin #register_btn:link, .form-signin #register_btn:visited{
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 7px;
+
+}
+.form-signin a:hover, .form-signin a:active {
+    text-decoration: none;
+}
+.form-signin #login:hover, .form-signin #login:active, .form-signin #register_btn:hover,.form-signin #register_btn:active,
+#u_apply:hover, #u_apply:active{
+    background-color: #fff;
+    border: 1px solid #F05454;
+    text-decoration: none;
+    color: #F05454;
+}
+@media (max-width: 520px) {
+    .form-signin, .form-signin input[type="password"]{
+        min-width: initial;
+    }
+}

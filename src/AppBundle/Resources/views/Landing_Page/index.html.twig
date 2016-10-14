@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Tabulit</title>
+
+        {% block stylesheets %}
+            <!-- Bootstrap Core CSS -->
+            <link href="{{asset('/bundles/app/css/bootstrap.min.css')}}" rel="stylesheet">
+
+            <!-- Custom CSS -->
+            <link href="{{asset('/bundles/app/css/landing-page.css')}}" rel="stylesheet">
+                <!-- Bariol Regular CSS -->
+            <link href="{{asset('/bundles/app/fonts/stylesheet.css')}}" rel="stylesheet">
+            <link href="{{asset('/bundles/app/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+            <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+            <link rel="icon" type="image/png" href="{{asset('bundles/app/img/redcut_favicon.png')}}">
+
+        {% endblock %}
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                     
+                    <a class="navbar-brand page-scroll" href="#page-top"><img src="{{asset('bundles/app/img/redcut1.png')}}" css="width=auto; height=auto;"></a>
+                </div>
+                <ul class="navbar-log">
+{#                         <li>
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                                <input type="text" class="form-control" placeholder="SEARCH STORIES" name="srch-term" id="srch-term">
+                            </div>
+                        </li> #}
+                        {% if app.security.token is not null and app.user is not null  %}
+                            <li>
+                                <a class="btn btn-primary btn-xl page-scroll" id="item2" href="{{path('_logout')}}" style="margin-left: 15px;">LOGOUT</a>
+                            </li>
+                            {% else %}
+                                
+
+                            
+                        <li>
+                            
+                            <a class="page-scroll " id="item1" href="{{path('_login')}}">LOG IN</a>
+
+                            <a class="btn btn-primary btn-xl page-scroll" id="item2" href="{{path('_registration')}}">SIGN UP</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+            </div>
+
+            <!-- /.container -->
+        </nav>
+
+        {% block content %}
+        <!-- Full Page Image Background Carousel Header -->
+        <header id="myCarousel" class="carousel slide">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for Slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <!-- Set the first background image using inline CSS below. -->
+                    <div class="fill">
+                        <div class="header-content">
+                            <div class="header-content-box">
+                                <h2>YOUR LITERARY WORLD</h2>
+                                <h1>Tabulit</h1>
+
+                                <a href="{{path('_viewing_page')}}" class="btn btn-primary btn-xl page-scroll learnbtn">READ NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill">
+                        <div class="header-content">
+                            <div class="header-content-box2">
+
+                               {#  <a href="{{path('_viewing_page')}}" class="btn btn-primary btn-xl page-scroll learnbtn">READ NOW</a> #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the third background image using inline CSS below. -->
+                    <div class="fill">
+                        <div class="header-content">
+                            <div class="header-content-box3">
+
+                               {#  <a href="{{path('_viewing_page')}}" class="btn btn-primary btn-xl page-scroll learnbtn">READ NOW</a> #}
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <h1>WHAT IS TABULIT?</h1>
+                        <h3>We want Tabulit to be a place where people can freely explore great stories. That is why we took the word
+                            Tabula, a Latin word for a stone tablet that people used to write on, and the word Literature, together. <br><br>
+                            <strong>Tabu + Lit.</strong></h3>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+                 
+        </section>
+        <section class="slanted">
+            <div class="container">
+                <div>
+                    </section> 
+                    <!-- Begin Adventure Section -->
+                    <section id="begin" class="begin-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <h1>BEGIN YOUR ADVENTURE HERE</h1>
+                                </div>
+                            </div>
+                            <div class="row" id="begin-images">
+                                <div class="col-sm-4 beginread">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                           <span class="fa-stack fa-7x">
+                                                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                                  <i class="fa fa-binoculars fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <h3>Explore</h3>
+                                            <p>
+                                                Browse through our diverse selection of novels. Fantasy, Science Fiction, Romance, Realism, a little bit of everything. <br>What are you in the mood for? 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 beginread">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <span class="fa-stack fa-7x">
+                                                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                                  <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm-12">
+
+                                            <h3>Read</h3>
+                                            <p>
+                                                Read! All our novels are updated weekly. Reading something and there's another novel coming out that's more interesting? Read that one too! <br> Read them both! Read them all! 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 beginread">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <span class="fa-stack fa-7x">
+                                                  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                                  <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <h3>Write</h3>
+                                            <p>
+                                                What was that? That's right. We said it. Write! Got a crazy story idea you had but never get it out there? This is your chance. <br>Send us your story ideas and you'll get a chance to see them fly. 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                    <!-- Tour Section -->
+                    <section id="tour" class="tour-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-10">
+                                    <h1>TAKE A PEEK!</h1>
+                                    <br>
+                                    <h3>Thinking about signing on? Here is some preview to give you an idea of the amazing experience of Tabulit.</h3>
+                                </div>
+                                <div class="col-lg-1"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="slanted2">
+                        <div class="container">
+                            <div>
+                                </section> 
+
+                                <!-- Preview Section -->
+
+                                <section id="preview" class="preview-section">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-1"></div>
+                                            <div class="col-lg-5">
+                                                <div class="tour-bullets">
+                                                    <a data-target="#carousel2" data-slide-to="0" class="active">INTUITIVE BROWSING</a><br><br><br><br>
+                                                    <a data-target="#carousel2" data-slide-to="1">EASY NAVIGATION</a><br><br><br><br>
+                                                    <a data-target="#carousel2" data-slide-to="2">CLEAN READING EXPERIENCE</a>
+                                                </div>
+                                            </div>
+                                            <div class="container col-lg-5" id="previewimg">
+                                                <div id="carousel2" class="carousel slide">
+                                                    <div class="carousel-inner">
+                                                        <div class="item active">
+                                                            <div class="fill"></div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="fill"></div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="fill"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1"></div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- Contact Section -->
+                                <section id="contact" class="contact-section">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-1"></div>
+                                            <div class="col-lg-10" style="margin-bottom: 100px;">
+                                                <h1>STILL NOT CONVINCED?</h1>
+                                                <h3>Check out what our writers say.</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="writers-comment">
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-5 col-md-offset-1">
+                                                        <div id="thumbnail-container">
+                                                            <div class="pull-left">
+                                                                <img id="writers-thumbnail" src="{{ asset('bundles/app/img/williamb.jpg') }}" width="70" height="70">
+                                                            </div>
+                                                            <div class="writers-body">
+                                                                <p>“The guys at Tabulit have pretty
+                                                                    much one thing in mind: making your
+                                                                    story as great as possible.” <br><id="writers-name" style="font-size:larger;color: #a8a8a8;">William, <id="writers-strong" style="font-weight: bold; color:#EC5050;">Writer</id></id> </p> 
+                                                            </div>
+                                                        </div>
+                                                        <div id="thumbnail-container">
+                                                            <div class="pull-left">
+                                                                <img id="writers-thumbnail" src="{{ asset('bundles/app/img/helena.jpg') }}" width="70" height="70">
+                                                            </div>
+                                                            <div class="writers-body">
+                                                                <p>“At Tabulit, I get to work closely with an editor to constantly improve my story and smooth over the cracks.” <br><id="writers-name" style="font-size:larger;color: #a8a8a8;">Helena, <id="writers-strong" style="font-weight: bold; color:#EC5050;">Writer</id></id> </p> 
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-offset-1">
+                                                        <div id="thumbnail-container">
+                                                            <div class="pull-left">
+                                                                <img id="writers-thumbnail" src="{{ asset('bundles/app/img/ruxrusu.jpg') }}" width="70" height="70">
+                                                            </div>
+                                                            <div class="writers-body">
+                                                                <p>“Definitely one of the best e-publishing
+                                                                    platforms I've used, especially if you
+                                                                    don’t like giving your work away for free.”  <br><id="writers-name" style="font-size:larger;color: #a8a8a8;"> Ruxandra, <id="writers-strong" style="font-weight: bold; color:#EC5050;">Writer</id></id> </p> 
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div> 
+                        </div>
+                </div>
+        </section>
+
+
+        <section class="start-now">
+            <div class="container">
+                <h1>READY TO START?</h1>
+                <a href="{{path('_viewing_page')}}" class="btn btn-primary btn-xl">READ NOW</a>
+            </div>
+        </section>
+         {% endblock %}
+
+
+
+        {% block javascripts %}
+            <!-- jQuery -->
+            <script src="{{asset('/bundles/app/js/jquery.js')}}"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{{asset('/bundles/app/js/bootstrap.min.js')}}"></script>
+
+            <!-- Scrolling Nav JavaScript -->
+            <script src="{{asset('/bundles/app/js/jquery.easing.min.js')}}"></script>
+            <script src="{{asset('/bundles/app/js/scrolling-nav.js')}}"></script>
+
+            <!-- Script to Activate the Carousel -->
+            <script>
+                $('.carousel').carousel({
+                    interval: 5000 //changes the speed
+                })
+            </script>
+
+        {% endblock %}
+
+    </body>
+
+</html>

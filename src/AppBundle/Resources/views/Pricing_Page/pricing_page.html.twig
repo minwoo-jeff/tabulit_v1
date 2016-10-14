@@ -1,0 +1,57 @@
+{% extends 'AppBundle:Viewing_Page:viewpage.html.twig' %}
+
+{% block main %}
+        <main>
+                <div class="row">
+              
+                    <div class="col-sm-10 col-md-offset-1">
+                        <div class="price-heading">
+                            <h1>Buy tokens to unlock novels</h1>
+                            <h4>Each issue can be unlocked with a single token. Every novel has up to 3 free issues, and after that if you would
+                                like to continue with the novel, you can unlock the next issues with the tokens that you purchase on this page. </h4>
+                            
+                        </div>
+                    </div>
+            
+                </div>
+                <br>
+                <div class="row" >
+
+                    <div class="col-md-10 col-md-offset-1" style="height: auto;">
+                        {% for flashMessage in app.session.flashbag.get('notice') %}
+                            <div class="flash-notice" style="text-align: center">
+                                {{ flashMessage }}
+                            </div>
+                        {% endfor %}
+                        <div class="price-tags">
+                            <div class="tag" id="blue-tag">
+
+                                <img src="{{asset('bundles/app/img/bluetag.png')}}" style="width: 100%;">
+                                <a href="{{path('_prepare_payment', {'user_id':user.id, 'amount':299})}}" class="blue-btn" style="width:auto;">BUY NOW</a>
+                            </div>
+                            <div class="tag" id="red-tag">
+                                <img src="{{asset('bundles/app/img/redtag.png')}}" style="width: 100%;">
+                                <a href="{{path('_prepare_payment', {'user_id':user.id, 'amount':549})}}" class="red-btn">BUY NOW</a>
+                            </div>
+                            <div class="tag" id="yellow-tag">
+                                <img src="{{asset('bundles/app/img/yellowtag.png')}}" style="width: 100%;">
+                                <a href="{{path('_prepare_payment', {'user_id':user.id, 'amount':749})}}" class="yellow-btn">BUY NOW</a>
+                            </div>
+                            <div class="tag" id="green-tag">
+                                <img src="{{asset('bundles/app/img/greentag.png')}}" style="width: 100%;">
+                                <a href="{{path('_prepare_payment', {'user_id':user.id, 'amount':899})}}" class="green-btn">BUY NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                    {#<div class="col-md-1">
+                    </div>#}
+                </div>
+                {#<div class="col-md-1">
+                </div>#}
+            <div class="price-continue">
+                <h3>...or continue reading</h3><br>
+                <a href="{{path('_viewing_page')}}" class="price-btn">ALL STORIES</a>
+                {#<a href="" class="price-btn">UNLOCKED SERIALS</a>#}
+            </div>
+    </main>
+{% endblock %}

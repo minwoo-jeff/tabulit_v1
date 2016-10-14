@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/signin/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Custom CSS -->
+        <link href="{{asset('bundles/app/css/login.css')}}" rel="stylesheet">
+
+        <title>Tabulit - Sign Up</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+        <!-- Bariol Regular CSS -->
+        <link href="{{asset('bundles/app/fonts/stylesheet.css')}}" rel="stylesheet">
+        <link rel="icon" type="image/png" href="{{asset('bundles/app/img/redcut_favicon.png')}}">
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body style="font-family:'bariol_regularregular', sans-serif;">
+
+        <div class="container">
+            {{form_start(form, {'attr': {'class': 'form-signin'}}) }}
+            {#<form class="form-signin">#}
+            <div class="form-container">
+                <div class="logo">
+                    <a href="{{path('_homepage')}}"><img src="{{asset('bundles/app/img/redcut1.png')}}" style="width: 35px;
+                                                         height: auto;"></a>
+
+                    <h2 class="form-signin-heading">Get started with Tabulit!</h2>
+                    <p>Sign up for free! No strings attached.</p>
+                    {% for flash_message in app.session.flashbag.get('notice') %}
+                        <div class="flash-notice">
+                            {{ flash_message }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div>{{form_widget(form.email, {'attr': {'class': 'email form-control', 'placeholder':'Email'}})}}</div>
+                <div >
+                    {{ form_widget(form.password.first, {'attr': {'class': 'form-control', 'placeholder': 'Password', 'required': 'required'}}) }}
+                </div>
+                <div>
+                    {{ form_widget(form.password.second, {'attr': {'class': 'form-control', 'placeholder': 'Confirm password', 'required': 'required'}}) }}
+                </div>
+                  {{form_widget(form.password, {'attr': { 'id':'password', 'placeholder': 'Password'}})}}
+
+                {{form_widget(form.firstName, {'attr': {'class': 'email form-control', 'placeholder':'First Name'}, })}}
+                {{form_widget(form.lastName, {'attr': {'class': 'email form-control', 'placeholder':'Last Name'}, })}}
+                {{form_widget(form.gender)}}
+                {{form_widget(form.birthDate)}}
+
+                <div style="margin: 20px;">{{form_widget(form.accepted)}} I agree to the <a href="{{path('_terms')}}">Terms and Conditions</a> and <a href="{{path('_privacy')}}">Privacy Policy</a></div>
+                {{form_widget(form.apply, {'attr': {'class':'btn btn-lg btn-primary btn-block', 'id':'login'}})}}
+
+            </div>
+            {{form_end(form)}}
+        </div> <!-- /container -->
+        <script>
+        if ( $('[type="date"]').prop('type') != 'date' ) {
+                $('[type="date"]').datepicker();
+        }
+        </script>
+
+        
+    </body>
+</html>

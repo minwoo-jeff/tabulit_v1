@@ -1,0 +1,17 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: minwooyoon.com
+    database_port: 3306
+    database_name: tabulit_main
+    database_user: tabulit_admin
+    database_password: 'f[UBN5En[ExI'
+    mailer_transport: smtp
+    mailer_host: p3plcpnl0171.prod.phx3.secureserver.net
+    mailer_user: admin@tabulit.com
+    mailer_password: tabulit102015
+    mailer_pot: 465
+    mailer_encryption: ssl
+    locale: en
+    secret: ih4tiu4h34ih3j2jkee
+    salt.rc4: r4575442qwererwe4ui

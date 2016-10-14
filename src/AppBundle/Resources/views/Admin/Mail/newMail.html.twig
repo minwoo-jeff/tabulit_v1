@@ -1,0 +1,41 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    Mail <small>New</small>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li class="active">
+        New Mail
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+            {{ form_start(form) }}
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>{{ form_label(form.subject) }}</td>
+                        <td>{{ form_widget(form.subject, {'attr': {'style': 'width:100%'}}) }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form_label(form.message) }}</td>
+                        <td>{{ form_widget(form.message, {'attr': {'style': 'width:100%'}}) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {{ form_widget(form.save, {'attr': {'class': 'btn btn-success btn-lg'}}) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

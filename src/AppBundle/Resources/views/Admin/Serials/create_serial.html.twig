@@ -1,0 +1,46 @@
+{% extends 'AppBundle:Admin:admin_dash.html.twig' %}
+
+{% block header %}
+    Create Serial
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        <i class="fa fa-dashboard"></i> <a href={{path('_admin_homepage')}}>Main</a>
+    </li>
+    <li class="active">
+        Create Serial
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {{form_start(form)}}
+        <table class="table create-serial">
+            <tbody>
+                <tr>
+                    <td>{{form_label(form.title)}}</td>
+                    <td>{{form_widget(form.title)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.description)}}</td>
+                    <td>{{form_widget(form.description)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.writtenBy)}}</td>
+                    <td>{{form_widget(form.writtenBy)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.file)}}</td>
+                    <td>{{form_widget(form.file)}}</td>
+                </tr>
+                <tr>
+                    <td>{{form_label(form.category)}}</td>
+                    <td>{{form_widget(form.category)}}</td>
+                </tr>
+            </tbody>
+        </table>
+                {{form_widget(form.apply, {'attr': {'class': 'btn btn-default'}})}}
+        {{form_end(form)}}         
+    </div>
+{% endblock %}
